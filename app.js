@@ -7,30 +7,17 @@ const api = new Q('api');
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin, process.stdout);
 
-
+api.subscribe('msg', (payload) => {
+  let msg = JSON.parse(payload);
+  if(msg.name !== 'Tia'){
+    console.log(msg);
+  }
+});
 
 rl.on('line', function(line){
-  Q.publish('api', 'msg', line);
+  let obj = {
+    name: 'Tia',
+    message: line,
+  };
+  Q.publish('api', 'msg', JSON.stringify(obj));  
 });
-
-api.subscribe('msg', (payload) => {
-  console.log(payload);
-});
-
-// while(true){
-//   rl.on('line', function(line){
-//     console.log(line);
-//     api.publish('api', 'sendMessage', line);
-//   });
-
-// }
-
-
-
-
-// let message = process.argv.slice(2).shift();
-
-// // api.publish('api', 'sendMessage', {name: message});
-// // api.subscribe('sendMessage','api', {name: message});
-// api.publish('api', 'sendMessage',{name: message});
-// // api.monitorEvents('togeneral');

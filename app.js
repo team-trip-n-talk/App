@@ -1,8 +1,8 @@
 'use strict';
+require('dotenv').config();
 
 const Q = require('@nmq/q/client');
 const api = new Q('api');
-require('dotenv').config();
 
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin, process.stdout);
@@ -13,7 +13,7 @@ rl.on('line', function(line){
   Q.publish('api', 'msg', line);
 });
 
-api.subscribe('msg', payload => {
+api.subscribe('msg', (payload) => {
   console.log(payload);
 });
 

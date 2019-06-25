@@ -1,23 +1,17 @@
 'use strict';
 require('dotenv').config();
 
-const Q = require('@nmq/q/client');
-const api = new Q('api');
+const io = require('socket.io-client');
+const socket = io.connect(process.env.SERVER);
+
+const utils = require('./utils/messageHandler');
 
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin, process.stdout);
 
-api.subscribe('msg', (payload) => {
-  let msg = JSON.parse(payload);
-  if(msg.name !== 'Tia'){
-    console.log(msg);
-  }
-});
+socket.on('message', utils.displayIncomingMessage);
 
-rl.on('line', function(line){
-  let obj = {
-    name: 'Tia',
-    message: line,
-  };
-  Q.publish('api', 'msg', JSON.stringify(obj));  
+rl.on('line', (line) => {
+  let name = 'Jeff';
+  socket.emit('message', utils.prepMessage(name, line));
 });

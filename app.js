@@ -1,8 +1,11 @@
+
 'use strict';
 require('dotenv').config();
 
 const io = require('socket.io-client');
-const socket = io.connect(process.env.SERVER);
+const socket = io.connect(process.env.SERVER, {
+  query: {token: process.env.TOKEN},
+});
 
 const utils = require('./utils/messageHandler');
 

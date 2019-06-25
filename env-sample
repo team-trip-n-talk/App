@@ -1,2 +1,1 @@
-Q_SERVER=https://trip-n-talk-message-server.herokuapp.com
-SERVER=http://localhost:3000
+SERVER=deployed server url

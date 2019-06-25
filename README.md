@@ -1,31 +1,46 @@
-# Trip'N'Talk
+# LAB - 
 
-## Client side application
+## Project Name
 
-### Authors: Tia, Jeff, Felipe
+### Author: Student/Group Name
 
 ### Links and Resources
-* [Message Queue Server - link TBD](http://xyz.com)
+* [submission PR](http://xyz.com)
+* [travis](http://xyz.com)
+* [back-end](http://xyz.com) (when applicable)
+* [front-end](http://xyz.com) (when applicable)
+
+#### Documentation
+* [api docs](http://xyz.com) (API servers)
+* [jsdoc](http://xyz.com) (Server assignments)
+* [styleguide](http://xyz.com) (React assignments)
 
 ### Modules
-#### `messageHandler.js`
+#### `modulename.js`
+##### Exported Values and Methods
 
-`displayIncomingMessage(payload, name) -> console.logs message`
-Helps display an incoming message
+###### `foo(thing) -> string`
+Usage Notes or examples
 
-`prepMessage(name, line) -> message`
-Preps a message for delivery. Sends it as a string.
+###### `bar(array) -> array`
+Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
-* `Q_SERVER` - URL to the server mesage queue
+* `PORT` - Port Number
+* `MONGODB_URI` - URL to the running mongo instance/db
 
 #### Running the app
 * `npm start`
-First message does not get send
+* Endpoint: `/foo/bar/`
+  * Returns a JSON object with abc in it.
+* Endpoint: `/bing/zing/`
+  * Returns a JSON object with xyz in it.
   
 #### Tests
-`npm test`
+* How do you run tests?
+* What assertions were made?
+* What assertions need to be / should be made?
 
 #### UML
 Link to an image of the UML for your application and response to events

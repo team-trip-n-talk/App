@@ -24,5 +24,5 @@ socket.on('message', utils.displayIncomingMessage);
 
 rl.on('line', (line) => {
   let name = 'Jeff';
-  Q.publish('messageQ', 'message', utils.prepMessage(name, line));  
+  socket.emit('message', utils.prepMessage(name, line));
 });

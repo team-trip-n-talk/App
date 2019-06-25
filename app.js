@@ -2,17 +2,22 @@
 require('dotenv').config();
 
 const Q = require('@nmq/q/client');
-const messageQ = new Q('messageQ');
-const utils = require('./utils/messageHandler');
+const api = new Q('api');
 
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin, process.stdout);
 
-messageQ.subscribe('message', (payload) => {
-  utils.displayIncomingMessage(payload);
+api.subscribe('msg', (payload) => {
+  let msg = JSON.parse(payload);
+  if(msg.name !== 'Tia'){
+    console.log(msg);
+  }
 });
 
-rl.on('line', (line) => {
-  let name = 'Felipe';
-  Q.publish('messageQ', 'message', utils.prepMessage(name, line));  
+rl.on('line', function(line){
+  let obj = {
+    name: 'Tia',
+    message: line,
+  };
+  Q.publish('api', 'msg', JSON.stringify(obj));  
 });

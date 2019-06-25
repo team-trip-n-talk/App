@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/team-trip-n-talk/App#readme",
   "dependencies": {
+    "@nmq/q": "^1.0.3",
     "dotenv": "^8.0.0",
     "eslint": "^6.0.1",
     "jest": "^24.8.0"

@@ -14,6 +14,6 @@ const rl = readline.createInterface(process.stdin, process.stdout);
 socket.on('message', utils.displayIncomingMessage);
 
 rl.on('line', (line) => {
-  let name = 'Jeff';
+  let name = process.env.USERNAME;
   socket.emit('message', utils.prepMessage(name, line));
 });

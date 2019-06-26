@@ -1,5 +1,16 @@
 'use strict';
 
+/**
+* Message Handler Module
+* @module messageHandler
+*/
+
+/**
+* Export object for messaging functions
+* @type {Object}
+* @desc allows use of messaging functions through the socket.io connections
+*/
+
 module.exports = exports ={};
 
 exports.displayIncomingMessage = (payload, name) => {

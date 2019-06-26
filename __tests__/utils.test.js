@@ -27,9 +27,6 @@ describe('Utils module', () => {
     });
 
     it('console.log the text "name: line"', () => {
-      // console.log = jest.fn().mockImplementation(() => {
-      //   return true;
-      // });
       console.log = jest.fn();
 
       utils.displayIncomingMessage(message);
@@ -37,8 +34,6 @@ describe('Utils module', () => {
       // The first argument of the first call to the function was 'hello'
       expect(console.log.mock.calls[0][0]).toBe('Sam: Hello!!');
     });
-
-
   });
 
   describe('prepMessge()', () => {
@@ -63,9 +58,7 @@ describe('Utils module', () => {
       result = JSON.stringify(result);
 
       expect(result).toBe('{"name":"sam","message":"line","timeSent":42}');
+
     });
-
-
-  });
-  
+  });  
 });

@@ -45,15 +45,14 @@ describe('Utils module', () => {
     });
 
     it('should stringify message', () => {
-      const DATE_TO_USE = new Date('2016');
-      const _Date = Date;
-      global.Date = jest.fn(() => DATE_TO_USE);
-      global.Date.UTC = _Date.UTC;
-      global.Date.parse = _Date.parse;
-      global.Date.now = _Date.now;      
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementationOnce(() =>
+          new Date('2016').valueOf()
+        );      
       let result = utils.prepMessage(name, line);
 
-      expect(result).toBe('{"name":"sam","message":"line","timeSent":"12/31/2015, 4:00:00 PM"}');
+      expect(result).toBe('{"name":"sam","message":"line","timeSent":1451606400000}');
     });
 
 

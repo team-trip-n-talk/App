@@ -20,6 +20,9 @@ exports.prepMessage = (name, line) => {
 };
 
 function _getDate() {
-  let date = new Date();
-  return date.toLocaleString();
+  // let date = Date.now;
+  // return date.toLocaleString();
+
+  let date = Date.now();
+  return date;
 }

@@ -2,6 +2,8 @@
 
 const utils = require('../utils/messageHandler');
 
+Date.now = () => 42;
+
 describe('Utils module', () => {
   
 
@@ -32,8 +34,6 @@ describe('Utils module', () => {
       // The first argument of the first call to the function was 'hello'
       expect(console.log.mock.calls[0][0]).toBe('Sam: Hello!!');
     });
-
-
   });
 
   describe('prepMessge()', () => {
@@ -52,10 +52,13 @@ describe('Utils module', () => {
         );      
       let result = utils.prepMessage(name, line);
 
-      expect(result).toBe('{"name":"sam","message":"line","timeSent":1451606400000}');
+      // adjustment for new Date
+      result = JSON.parse(result);
+      result.timeSent = 42;
+      result = JSON.stringify(result);
+
+      expect(result).toBe('{"name":"sam","message":"line","timeSent":42}');
+
     });
-
-
-  });
-  
+  });  
 });

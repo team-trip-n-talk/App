@@ -21,7 +21,7 @@ module.exports = exports ={};
 * @desc displays messages
 */
 
-exports.displayIncomingMessage = (payload, name) => {
+exports.displayIncomingMessage = (payload) => {
   let message = JSON.parse(payload);
   console.log(`${message.name}: ${message.message}`);  // displays name : message
   console.log(message.timeSent); // Displays time
@@ -43,16 +43,3 @@ exports.prepMessage = (line) => {
   
   return message;
 };
-
-/**
-* @method _getDate
-* @returns {string}  returns current date to attach to messages
-* @desc function to add date to messages
-*/
-function _getDate() {
-  // let date = Date.now;
-  // return date.toLocaleString();
-
-  let date = Date.now();
-  return date;
-}

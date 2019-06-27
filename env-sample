@@ -1,3 +1,2 @@
 SERVER=deployed server url
-TOKEN=secret key/token
-USERNAME=username
+TOKEN=secret token

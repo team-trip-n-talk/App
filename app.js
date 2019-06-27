@@ -8,19 +8,11 @@
 
 //Dependencies
 require('dotenv').config();
-const express = require('express');
 const utils = require('./utils/messageHandler');
 const readline = require('readline');
 
 //Readline variable creation
 const readlineInterface = readline.createInterface(process.stdin, process.stdout);
-
-// Prepare the express app
-const app = express();
-
-//Jsdocs
-app.use(express.static('docs'));
-app.use('/docs', express.static('docs'));
 
 const io = require('socket.io-client');
 

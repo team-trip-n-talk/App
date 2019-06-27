@@ -1,46 +1,34 @@
-# LAB - 
-
 ## Project Name
+Trip 'n' Talk Client Side App
 
-### Author: Student/Group Name
+[![Build Status](https://www.travis-ci.com/team-trip-n-talk/Client-side-App.svg?branch=master)](https://www.travis-ci.com/team-trip-n-talk/Client-side-App)
+
+### Authors: 
+Tia Rose, Jeff Lawrence, Felipe Delatorre
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [Github](https://github.com/team-trip-n-talk/Client-side-App)
+* [Travis](https://www.travis-ci.com/team-trip-n-talk/Client-side-App)
 
 #### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
+* [JSDOC](https://stupefied-heyrovsky-077cb3.netlify.com/)
+* [Data Flow Chart](https://www.lucidchart.com/documents/edit/b4adc909-52d2-460a-9a0a-d8cfb7211ec5/0)
 
 ### Modules
-#### `modulename.js`
-##### Exported Values and Methods
 
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
+* [Modules Wiki](https://github.com/team-trip-n-talk/Client-side-App/wiki/Modules)
 
 ### Setup
-#### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+#### `.env` requirements - see env-sample or look below
+
+* `SERVER` - deployed server url
+* `TOKEN` - secret key/token
 
 #### Running the app
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
   
 #### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+`npm test`
 
-#### UML
-Link to an image of the UML for your application and response to events
+### Group Agreement
+* [Group Agreement](https://github.com/team-trip-n-talk/Client-side-App/wiki/Group-Agreement)

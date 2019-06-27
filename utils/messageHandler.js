@@ -23,7 +23,7 @@ module.exports = exports ={};
 
 exports.displayIncomingMessage = (payload) => {
   let message = JSON.parse(payload);
-  console.log(`${message.name}: ${message.message}`);  // displays name : message
+  console.log(`${message.username}: ${message.message}`);  // displays name : message
   console.log(message.timeSent); // Displays time
 };
 

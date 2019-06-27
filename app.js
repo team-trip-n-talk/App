@@ -53,6 +53,5 @@ socket.on('message', utils.displayIncomingMessage);
 */
 
 rl.on('line', (line) => {
-  let name = process.env.USERNAME;
-  socket.emit('message', utils.prepMessage(name, line));
+  socket.emit('message', utils.prepMessage(line));
 });

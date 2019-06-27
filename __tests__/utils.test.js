@@ -11,7 +11,7 @@ describe('Utils module', () => {
     let message;
     beforeEach(() => {
       message = {
-        name: 'Sam',
+        username: 'Sam',
         message: 'Hello!!',
         timeSent: '2pm',
       };
@@ -37,27 +37,15 @@ describe('Utils module', () => {
   });
 
   describe('prepMessge()', () => {
-    let name;
     let line;
     beforeEach(() => {
-      name = 'sam';
-      line = 'line';
+      line = 'Hello World!';
     });
 
     it('should stringify message', () => {
-      jest
-        .spyOn(global.Date, 'now')
-        .mockImplementationOnce(() =>
-          new Date('2016').valueOf()
-        );      
-      let result = utils.prepMessage(name, line);
+      let result = utils.prepMessage(line);
 
-      // adjustment for new Date
-      result = JSON.parse(result);
-      result.timeSent = 42;
-      result = JSON.stringify(result);
-
-      expect(result).toBe('{"name":"sam","message":"line","timeSent":42}');
+      expect(result).toBe('{"message":"Hello World!"}');
 
     });
   });  

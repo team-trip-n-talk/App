@@ -21,9 +21,9 @@ module.exports = exports ={};
 * @desc displays messages
 */
 
-exports.displayIncomingMessage = (payload, name) => {
+exports.displayIncomingMessage = (payload) => {
   let message = JSON.parse(payload);
-  console.log(`${message.name}: ${message.message}`);  // displays name : message
+  console.log(`${message.username}: ${message.message}`);  // displays name : message
   console.log(message.timeSent); // Displays time
 };
 
@@ -35,26 +35,11 @@ exports.displayIncomingMessage = (payload, name) => {
 * @desc takes in name and message, creates an object and converts it to string format ready for transmission
 */
 
-exports.prepMessage = (name, line) => {
+exports.prepMessage = (line) => {
   let message = {
-    name: name,
     message: line,
-    timeSent: _getDate(),
   };
   message = JSON.stringify(message);
   
   return message;
 };
-
-/**
-* @method _getDate
-* @returns {string}  returns current date to attach to messages
-* @desc function to add date to messages
-*/
-function _getDate() {
-  // let date = Date.now;
-  // return date.toLocaleString();
-
-  let date = Date.now();
-  return date;
-}

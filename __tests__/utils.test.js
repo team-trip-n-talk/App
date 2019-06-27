@@ -11,7 +11,7 @@ describe('Utils module', () => {
     let message;
     beforeEach(() => {
       message = {
-        name: 'Sam',
+        username: 'Sam',
         message: 'Hello!!',
         timeSent: '2pm',
       };

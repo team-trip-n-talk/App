@@ -35,11 +35,9 @@ exports.displayIncomingMessage = (payload, name) => {
 * @desc takes in name and message, creates an object and converts it to string format ready for transmission
 */
 
-exports.prepMessage = (name, line) => {
+exports.prepMessage = (line) => {
   let message = {
-    name: name,
     message: line,
-    timeSent: _getDate(),
   };
   message = JSON.stringify(message);
   

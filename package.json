@@ -1,0 +1,30 @@
+{
+  "name": "Logger",
+  "version": "1.0.0",
+  "description": "## Project Name",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "watch": "nodemon app.js",
+    "test-watch": "jest --watchAll --coverage",
+    "test": "jest --coverage",
+    "lint": "eslint \"**/*.js\"",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json ."
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.2.0",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.16.0",
+    "jsdoc": "^3.6.2",
+    "jest": "^23.6.0"
+  }
+}
